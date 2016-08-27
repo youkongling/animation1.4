@@ -31,8 +31,8 @@ section{
 	box-shadow: none;
 	border: none;
 	min-height: 100%;
-	padding-top: 75px;
-	padding-bottom: 150px;
+	padding-top: 100px;
+	padding-bottom: 50px;
 	text-align: center;
 	position: relative;
 }
@@ -83,21 +83,24 @@ section .section-info{
 	padding-top: 10px;
 	padding-bottom: 10px;
 }
+.button-border{
+	flex: 1;
+	border: 1px solid #FFF;
+}
 .section-button{
-	width: 105%;
-	height: 100px;
-	line-height: 100px;
+	display: flex;
+	justify-content: space-between;
+	padding-top: 25px;
+	height: 110px;
+	line-height: 85px;
 	color: #FFF;
 	text-align: center;
-	font-size: 35px;
+	font-size:40px;
 	font-family: "WawaTC-Regular";
 	text-transform: none;
 	letter-spacing: 1px;
 	font-weight: 400;
-	position: fixed;
-	bottom: 0px;
-	left: 0px;
-	background-color: #78bc27;
+	position: relative;
 }
 .form-down{
 	position: absolute;
