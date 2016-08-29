@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=0.5, minimum-scale=0.5" />
+		<title>1-4步</title>
+		<link rel="stylesheet" href="css/base.css" />
+		<link rel="stylesheet" href="css/bootstrap.css" />
+		<link rel="stylesheet" href="css/xiaokang.css" />
+		<link rel="stylesheet" href="css/font-awesome.min.css">
+		<style type="text/css">
+			.layout{
+				z-index: 3;
+			}
+			.top{
+				padding-top: 40px;
+				padding-bottom: 10px;
+				/*background-image: radial-gradient(rgba(255,255,255,0),rgba(255,255,255,0.1));*/
+			}
+			.dash{
+				padding-top: 10px;
+				padding-bottom: 30px;
+			}
+			.padding-right{
+				padding-right:40px;
+			}
+			.down .mobile{
+				position: relative;
+				padding-top: 30px;
+				padding-bottom: 30px;
+			}
+			.mobile .mobile-border{
+				position: relative;
+				z-index: 5;
+			}
+			.mobile .mobile-content{
+				position: absolute;
+				z-index: 6;
+				padding-left: 20px;
+				padding-right: 80px;
+				padding-top: 28px;
+			}
+			.mobile .mobile-content .mobile-content-bg{
+				position: relative;
+				z-index: 7;
+			}
+			.mobile-contetn-show{
+				position: relative;
+				z-index: 11;
+			}
+			.mobile .mobile-content .mobile-content-user{
+				position: absolute;
+				z-index: 10;
+				top: 40%;
+				left: 2%;
+				padding-left: 25px;
+				padding-right: 25px;
+			}
+			.show-img{
+				display: block;
+			}
+			.hide-img{
+				display: none;
+			}
+			.animation{
+				border-radius: 50%;
+				animation: beat 0.8s ease 0.5s infinite normal;
+			}
+			.animation-icons{
+				border-radius: 6px;
+				animation: beat1 0.8s ease 0.5s infinite normal;
+			}
+			@keyframes beat {
+				0% {
+					transform: scale(1);
+					box-shadow:0 0 40px green;
+				}
+	
+				50% {
+					transform: scale(1.2);
+					box-shadow:0 0 70px green;
+				}
+	
+				100% {
+					transform: scale(1);
+					box-shadow:0 0 40px green;
+				}
+			}
+			.animation-lock{
+				border-radius: 6px;
+				animation: beat_lock 0.8s ease 0.5s infinite normal;
+			}
+			@keyframes beat_lock {
+				0% {
+					transform: scale(1);
+					box-shadow:0 0 40px green;
+				}
+	
+				50% {
+					transform: scale(1.3);
+					box-shadow:0 0 70px green;
+				}
+	
+				100% {
+					transform: scale(1);
+					box-shadow:0 0 40px green;
+				}
+			}
+			.animation1{
+				border-radius: 6px;
+				animation: beat1 0.8s ease 0.5s infinite normal;
+			}
+			@keyframes beat1 {
+				0% {
+					transform: scale(1);
+				}
+	
+				50% {
+					transform: scale(1.2);
+				}
+	
+				100% {
+					transform: scale(1);
+				}
+			}
+			.mobile .mobile-content .mobile-content-icon{
+				position: absolute;
+				z-index: 10;
+				top: 30%;
+				left: 30%;
+			}
+			.mobile .mobile-content .mobile-content-icon .moblie-content-icon-img{
+				/*padding-top: 20px;
+				padding-bottom: 5px;
+				padding-left: 10px;
+				padding-right: 15px;*/
+				/*padding-top: 20px;
+				padding-bottom: 0px;
+				padding-left: 0px;
+				padding-right: 20px;*/
+				padding-top: 25px;
+				padding-bottom: 0px;
+				padding-left: 10px;
+				padding-right: 15px;
+			}
+			.mobile .mobile-content .mobile-content-lock{
+				position: absolute;
+				z-index: 10;
+				top: 67%;
+				left: 50%;
+				padding-left: 25px;
+				padding-right: 25px;
+			}
+			.black{
+				position: absolute;
+				left: 0px;
+				width: 100%;
+				height: 0px;
+				z-index: 2;
+				padding-bottom: 180%;
+				background-color: rgba(0,0,0,0.5);
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-xs-12 text-center">
+					<div class="bg-img"></div>
+					<div class="bg-border"></div>
+					<div class="col-xs-12 layout">
+						<div class="col-xs-12 top">
+							<div class="col-xs-3">
+								<img src="img/zhiri.png" class="img-responsive" />
+							</div>
+							<div class="col-xs-3 col-xs-offset-2">
+								<a href="index5-8.html" target="_self">
+									<img src="img/next-button.png" class="img-responsive" id="next_button">
+								</a>
+							</div>
+						</div>
+						<div class="col-xs-12 dash">
+							<div class="col-xs-12 padding-right" style="opacity: 0.6;">
+								<img src="img/xian.png" class="img-responsive">
+							</div>
+						</div>
+						<div class="col-xs-12 down">
+							<div class="col-xs-12 mobile-right-first">
+								<div class="col-xs-2 col-xs-offset-3">
+									<img src="img/1-4wenzi3.png" class="img-responsive" id="right_first_top">
+								</div>
+								<div class="col-xs-6">
+									<img src="img/1-4wenzi2.png" class="img-responsive" id="right_first_down">
+								</div>
+							</div>
+							<div class="col-xs-12 mobile padding-right">
+								<div class="col-xs-10 col-xs-offset-1 mobile-content">
+									<div class="col-xs-3 col-xs-offset-1 mobile-content-user">
+										<img src="img/user.png" class="img-responsive animation" id="user">
+									</div>
+									<div class="col-xs-2 mobile-content-icon" id="first_icons">
+										<img src="img/icon-gym.png" class="img-responsive moblie-content-icon-img" >
+										<img src="img/icon-station.png" class="img-responsive moblie-content-icon-img">
+										<img src="img/icon-class.png" class="img-responsive moblie-content-icon-img">
+									</div>
+									<div class="col-xs-2 mobile-content-lock">
+										<img src="img/lock.png" class="img-responsive" id="lock">
+									</div>
+									<img src="img/mobile-main.png" class="img-responsive mobile-content-bg show-img" id="mobile-main">
+									<img src="img/user-center.png" class="img-responsive mobile-contetn-show hide-img" id="user-center">
+								</div>
+								<img src="img/mobile.png" class="img-responsive mobile-border">
+							</div>
+							<div class="col-xs-12 mobile-left-first">
+								<div class="col-xs-9 col-xs-offset-3">
+									<img src="img/1-4wenzi1.png" class="img-responsive img-radius" id="left_first">
+								</div>
+							</div>
+						</div>
+					</div>
+					<!--<div class="black"></div>-->
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript">
+			(function(){
+				var user=document.querySelector("#user");
+				var left_first=document.querySelector("#left_first");
+				var first_icons=document.querySelector("#first_icons");
+				var images=document.querySelectorAll("#first_icons > img");
+				var right_first_top=document.querySelector("#right_first_top");
+				var right_first_down=document.querySelector("#right_first_down");
+				var lock=document.querySelector("#lock");
+				var next_button=document.querySelector("#next_button");
+				var mobile_main=document.querySelector("#mobile-main");
+				var user_center=document.querySelector("#user-center");
+				user.addEventListener("click",function(){
+					user.classList.remove("animation");
+					left_first.classList.add("animation1");
+					mobile_main.classList.remove("show");
+					mobile_main.classList.add("hide");
+					user_center.classList.remove("hide");
+					user_center.classList.add("show");
+				});
+				left_first.addEventListener("click",function(){
+					left_first.classList.remove("animation1");
+					mobile_main.classList.remove("hide");
+					mobile_main.classList.add("show");
+					user_center.classList.remove("show");
+					user_center.classList.add("hide");
+					for(var i=0;i<images.length;i++){
+						images[i].classList.add("animation-icons");
+					}
+				});
+				first_icons.addEventListener("click",function(){
+					for(var i=0;i<images.length;i++){
+						images[i].classList.remove("animation-icons");
+					}
+					right_first_top.classList.add("animation1");
+				});
+				right_first_top.addEventListener("click",function(){
+					right_first_top.classList.remove("animation1");
+					lock.classList.add("animation-lock");
+				});
+				lock.addEventListener("click",function(){
+					lock.classList.remove("animation-lock");
+					right_first_down.classList.add("animation1");
+				});
+				right_first_down.addEventListener("click",function(){
+					right_first_down.classList.remove("animation1");
+					next_button.classList.add("animation1");
+				});
+			})();
+		</script>
+	</body>
+</html>
