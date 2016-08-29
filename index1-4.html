@@ -8,159 +8,6 @@
 		<link rel="stylesheet" href="css/bootstrap.css" />
 		<link rel="stylesheet" href="css/xiaokang.css" />
 		<link rel="stylesheet" href="css/font-awesome.min.css">
-		<style type="text/css">
-			.layout{
-				z-index: 3;
-			}
-			.top{
-				padding-top: 40px;
-				padding-bottom: 10px;
-				/*background-image: radial-gradient(rgba(255,255,255,0),rgba(255,255,255,0.1));*/
-			}
-			.dash{
-				padding-top: 10px;
-				padding-bottom: 30px;
-			}
-			.padding-right{
-				padding-right:40px;
-			}
-			.down .mobile{
-				position: relative;
-				padding-top: 30px;
-				padding-bottom: 30px;
-			}
-			.mobile .mobile-border{
-				position: relative;
-				z-index: 5;
-			}
-			.mobile .mobile-content{
-				position: absolute;
-				z-index: 6;
-				padding-left: 20px;
-				padding-right: 80px;
-				padding-top: 28px;
-			}
-			.mobile .mobile-content .mobile-content-bg{
-				position: relative;
-				z-index: 7;
-			}
-			.mobile-contetn-show{
-				position: relative;
-				z-index: 11;
-			}
-			.mobile .mobile-content .mobile-content-user{
-				position: absolute;
-				z-index: 10;
-				top: 40%;
-				left: 2%;
-				padding-left: 25px;
-				padding-right: 25px;
-			}
-			.show-img{
-				display: block;
-			}
-			.hide-img{
-				display: none;
-			}
-			.animation{
-				border-radius: 50%;
-				animation: beat 0.8s ease 0.5s infinite normal;
-			}
-			.animation-icons{
-				border-radius: 6px;
-				animation: beat1 0.8s ease 0.5s infinite normal;
-			}
-			@keyframes beat {
-				0% {
-					transform: scale(1);
-					box-shadow:0 0 40px green;
-				}
-	
-				50% {
-					transform: scale(1.2);
-					box-shadow:0 0 70px green;
-				}
-	
-				100% {
-					transform: scale(1);
-					box-shadow:0 0 40px green;
-				}
-			}
-			.animation-lock{
-				border-radius: 6px;
-				animation: beat_lock 0.8s ease 0.5s infinite normal;
-			}
-			@keyframes beat_lock {
-				0% {
-					transform: scale(1);
-					box-shadow:0 0 40px green;
-				}
-	
-				50% {
-					transform: scale(1.3);
-					box-shadow:0 0 70px green;
-				}
-	
-				100% {
-					transform: scale(1);
-					box-shadow:0 0 40px green;
-				}
-			}
-			.animation1{
-				border-radius: 6px;
-				animation: beat1 0.8s ease 0.5s infinite normal;
-			}
-			@keyframes beat1 {
-				0% {
-					transform: scale(1);
-				}
-	
-				50% {
-					transform: scale(1.2);
-				}
-	
-				100% {
-					transform: scale(1);
-				}
-			}
-			.mobile .mobile-content .mobile-content-icon{
-				position: absolute;
-				z-index: 10;
-				top: 30%;
-				left: 30%;
-			}
-			.mobile .mobile-content .mobile-content-icon .moblie-content-icon-img{
-				/*padding-top: 20px;
-				padding-bottom: 5px;
-				padding-left: 10px;
-				padding-right: 15px;*/
-				/*padding-top: 20px;
-				padding-bottom: 0px;
-				padding-left: 0px;
-				padding-right: 20px;*/
-				padding-top: 25px;
-				padding-bottom: 0px;
-				padding-left: 10px;
-				padding-right: 15px;
-			}
-			.mobile .mobile-content .mobile-content-lock{
-				position: absolute;
-				z-index: 10;
-				top: 67%;
-				left: 50%;
-				padding-left: 25px;
-				padding-right: 25px;
-			}
-			.black{
-				position: absolute;
-				left: 0px;
-				width: 100%;
-				height: 0px;
-				z-index: 2;
-				padding-bottom: 180%;
-				background-color: rgba(0,0,0,0.5);
-			}
-		</style>
 	</head>
 	<body>
 		<div class="container-fluid">
@@ -199,15 +46,15 @@
 										<img src="img/user.png" class="img-responsive animation" id="user">
 									</div>
 									<div class="col-xs-2 mobile-content-icon" id="first_icons">
-										<img src="img/icon-gym.png" class="img-responsive moblie-content-icon-img" >
-										<img src="img/icon-station.png" class="img-responsive moblie-content-icon-img">
-										<img src="img/icon-class.png" class="img-responsive moblie-content-icon-img">
+										<img src="img/icon-gym.png" class="img-responsive moblie-content-icon-img hide" >
+										<img src="img/icon-station.png" class="img-responsive moblie-content-icon-img hide">
+										<img src="img/icon-class.png" class="img-responsive moblie-content-icon-img hide">
 									</div>
 									<div class="col-xs-2 mobile-content-lock">
-										<img src="img/lock.png" class="img-responsive" id="lock">
+										<img src="img/lock.png" class="img-responsive hide" id="lock">
 									</div>
-									<img src="img/mobile-main.png" class="img-responsive mobile-content-bg show-img" id="mobile-main">
-									<img src="img/user-center.png" class="img-responsive mobile-contetn-show hide-img" id="user-center">
+									<img src="img/mobile-main1.png" class="img-responsive mobile-content-bg show" id="mobile-main">
+									<img src="img/user-center.png" class="img-responsive mobile-contetn-show hide" id="user-center">
 								</div>
 								<img src="img/mobile.png" class="img-responsive mobile-border">
 							</div>
@@ -236,6 +83,7 @@
 				var user_center=document.querySelector("#user-center");
 				user.addEventListener("click",function(){
 					user.classList.remove("animation");
+					user.classList.add("hide");
 					left_first.classList.add("animation1");
 					mobile_main.classList.remove("show");
 					mobile_main.classList.add("hide");
@@ -250,20 +98,24 @@
 					user_center.classList.add("hide");
 					for(var i=0;i<images.length;i++){
 						images[i].classList.add("animation-icons");
+						images[i].classList.remove("hide");
 					}
 				});
 				first_icons.addEventListener("click",function(){
 					for(var i=0;i<images.length;i++){
 						images[i].classList.remove("animation-icons");
+						images[i].classList.add("hide");
 					}
 					right_first_top.classList.add("animation1");
 				});
 				right_first_top.addEventListener("click",function(){
 					right_first_top.classList.remove("animation1");
+					lock.classList.remove("hide");
 					lock.classList.add("animation-lock");
 				});
 				lock.addEventListener("click",function(){
 					lock.classList.remove("animation-lock");
+					lock.classList.add("hide");
 					right_first_down.classList.add("animation1");
 				});
 				right_first_down.addEventListener("click",function(){

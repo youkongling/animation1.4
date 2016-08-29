@@ -61,6 +61,7 @@ body{
 	position: relative;
 	z-index: 7;
 }
+
 .mobile-contetn-show{
 	position: relative;
 	z-index: 11;
@@ -72,12 +73,6 @@ body{
 	left: 2%;
 	padding-left: 25px;
 	padding-right: 25px;
-}
-.show-img{
-	display: block;
-}
-.hide-img{
-	display: none;
 }
 .animation{
 	border-radius: 50%;
@@ -104,6 +99,22 @@ body{
 		box-shadow:0 0 40px green;
 	}
 }
+@-webkit-keyframes beat {
+	-webkit-0% {
+		transform: scale(1);
+		box-shadow:0 0 40px green;
+	}
+
+	-webkit-50% {
+		transform: scale(1.2);
+		box-shadow:0 0 70px green;
+	}
+
+	-webkit-100% {
+		transform: scale(1);
+		box-shadow:0 0 40px green;
+	}
+}
 .animation-lock{
 	border-radius: 6px;
 	animation: beat_lock 0.8s ease 0.5s infinite normal;
@@ -125,11 +136,28 @@ body{
 		box-shadow:0 0 40px green;
 	}
 }
+@-webkit-keyframes beat_lock {
+	-webkit-0% {
+		transform: scale(1);
+		box-shadow:0 0 40px green;
+	}
+
+	-webkit-50% {
+		transform: scale(1.3);
+		box-shadow:0 0 70px green;
+	}
+
+	-webkit-100% {
+		transform: scale(1);
+		box-shadow:0 0 40px green;
+	}
+}
 .animation1{
 	border-radius: 6px;
 	animation: beat1 0.8s ease 0.5s infinite normal;
 	-webkit-animation: beat1 0.8s ease 0.5s infinite normal;
 }
+
 @keyframes beat1 {
 	0% {
 		transform: scale(1);
@@ -140,6 +168,19 @@ body{
 	}
 
 	100% {
+		transform: scale(1);
+	}
+}
+@-webkit-keyframes beat1 {
+	-webkit-0% {
+		transform: scale(1);
+	}
+
+	-webkit-50% {
+		transform: scale(1.2);
+	}
+
+	-webkit-100% {
 		transform: scale(1);
 	}
 }
@@ -179,4 +220,51 @@ body{
 	z-index: 2;
 	padding-bottom: 180%;
 	background-color: rgba(0,0,0,0.5);
+}
+
+.mobile .mobile-right-second{
+	display: flex;
+}
+.mobile-right-second{
+	padding-top: 60px;
+}
+.mobile-right-second .mobile-right-img1{
+	padding-top: 45%;
+}
+.mobile-right-second .mobile-right-img2{
+	padding-top: 45%;
+}
+.mobile-right-second .mobile-right-img3{
+	padding-top: 40%;
+}
+.mobile-content .mobile-content-letter{
+	position: absolute;
+	z-index: 10;
+	top: 12%;
+	left: 12%;
+	padding-left: 15px;
+}
+.mobile-content .mobile-content-chan{
+	position: absolute;
+	z-index: 10;
+	top: 69%;
+	left: 42%;
+	padding-left: 7px;
+	padding-right: 35px;
+}
+.mobile-content .mobile-content-love{
+	position: absolute;
+	z-index: 10;
+	top: 14%;
+	left: 28%;
+	padding-left: 9px;
+	padding-right: 35px;
+}
+.mobile-content .moblie-content-float{
+	position: relative;
+	z-index: 7;
+}
+.mobile-content .mobile-content-class{
+	position: relative;
+	z-index: 7;
 }

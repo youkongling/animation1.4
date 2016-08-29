@@ -8,72 +8,6 @@
 		<link rel="stylesheet" href="css/bootstrap.css" />
 		<link rel="stylesheet" href="css/xiaokang.css" />
 		<link rel="stylesheet" href="css/font-awesome.min.css">
-		<style type="text/css">
-			.layout{
-				z-index: 3;
-			}
-			.top{
-				padding-top: 40px;
-				padding-bottom: 10px;
-				/*background-image: radial-gradient(rgba(255,255,255,0),rgba(255,255,255,0.1));*/
-			}
-			.dash{
-				padding-top: 10px;
-				padding-bottom: 30px;
-			}
-			.padding-right{
-				padding-right:40px;
-			}
-			.down .mobile{
-				position: relative;
-				padding-top: 30px;
-				padding-bottom: 30px;
-			}
-			.mobile .mobile-border{
-				position: relative;
-				z-index: 5;
-			}
-			.mobile .mobile-content{
-				position: absolute;
-				z-index: 6;
-				padding-left: 20px;
-				padding-right: 80px;
-				padding-top: 28px;
-			}
-			.mobile .mobile-content .mobile-content-bg{
-				position: relative;
-				z-index: 7;
-			}
-			.mobile .mobile-right-second{
-				display: flex;
-			}
-			.mobile-right-second{
-				padding-top: 60px;
-			}
-			.mobile-right-second .mobile-right-img1{
-				padding-top: 45%;
-			}
-			.mobile-right-second .mobile-right-img2{
-				padding-top: 45%;
-			}
-			.mobile-right-second .mobile-right-img3{
-				padding-top: 40%;
-			}
-			/*.mobile .mobile-content .mobile-content-user{
-				position: absolute;
-				z-index: 8;
-				padding-top: 100px;
-				padding-left: 30px;
-				padding-right: 40px;
-				padding-top: 14.5%;
-				padding-left: 3.5%;
-				padding-right: 5%;
-			}
-			.mobile .mobile-content .mobile-content-icon{
-				position: absolute;
-				z-index: 9;
-			}*/
-		</style>
 	</head>
 	<body>
 		<div class="container-fluid">
@@ -87,7 +21,9 @@
 								<img src="img/zhiri.png" class="img-responsive" />
 							</div>
 							<div class="col-xs-3 col-xs-offset-2">
-								<img src="img/next-button.png" class="img-responsive">
+								<a href="index9-10.html" target="_self">
+									<img src="img/next-button.png" class="img-responsive" id="next_button">
+								</a>
 							</div>
 						</div>
 						<div class="col-xs-12 dash">
@@ -98,18 +34,29 @@
 						<div class="col-xs-12 down">
 							<div class="col-xs-12 mobile-right-second">
 								<div class="col-xs-4">
-									<img src="img/5-8wenzi1.png" class="img-responsive mobile-right-img1">
+									<img src="img/5-8wenzi1.png" class="img-responsive mobile-right-img1" id="font1">
 								</div>
 								<div class="col-xs-3">
-									<img src="img/5-8wenzi2.png" class="img-responsive mobile-right-img2">
+									<img src="img/5-8wenzi2.png" class="img-responsive mobile-right-img2" id="font2">
 								</div>
 								<div class="col-xs-5">
-									<img src="img/5-8wenzi3.png" class="img-responsive mobile-right-img3">
+									<img src="img/5-8wenzi3.png" class="img-responsive mobile-right-img3" id="font3">
 								</div>
 							</div>
 							<div class="col-xs-12 mobile padding-right">
 								<div class="col-xs-10 col-xs-offset-1 mobile-content">
-									<img src="img/mobile-main1.png" class="img-responsive mobile-content-bg">
+									<div class="col-xs-3 mobile-content-letter">
+										<img src="img/letter.png" class="img-responsive animation1" id="letter">
+									</div>
+									<div class="col-xs-2 mobile-content-love">
+										<img src="img/love.png" class="img-responsive hide" id="love">
+									</div>
+									<div class="col-xs-2 mobile-content-chan">
+										<img src="img/icon-chan.png" class="img-responsive hide" id="icon_chan">
+									</div>
+									<img src="img/mobile-class-bg.png" class="img-responsive mobile-content-class hide" id="float_class">
+									<img src="img/float.png" class="img-responsive moblie-content-float hide" id="float_">
+									<img src="img/mobile-main1.png" class="img-responsive mobile-content-bg show" id="float_bg">
 								</div>
 								<img src="img/mobile.png" class="img-responsive mobile-border">
 							</div>
@@ -118,5 +65,53 @@
 				</div>
 			</div>
 		</div>
+		<script type="text/javascript">
+			(function(){
+				var letter=document.querySelector("#letter");
+				var font1=document.querySelector("#font1");
+				var font3=document.querySelector("#font3");
+				var float_=document.querySelector("#float_");
+				var float_bg=document.querySelector("#float_bg");
+				var float_class=document.querySelector("#float_class");
+				var icon_chan=document.querySelector("#icon_chan");
+				var love=document.querySelector("#love");
+				var next_button=document.querySelector("#next_button");
+				letter.addEventListener("click",function(){
+					letter.classList.remove("animation1");
+					letter.classList.add("hide");
+					font1.classList.add("animation1");
+				});
+				font1.addEventListener("click",function(){
+					font1.classList.remove("animation1");
+					font3.classList.add("animation1");
+				});
+				font3.addEventListener("click",function(){
+					font3.classList.remove("animation1");
+					float_.classList.remove("hide");
+					float_.classList.add("show");
+					float_bg.classList.remove("show");
+					float_bg.classList.add("hide");
+					icon_chan.classList.remove("hide");
+					icon_chan.classList.add("show");
+					icon_chan.classList.add("animation1");
+				});
+				icon_chan.addEventListener("click",function(){
+					icon_chan.classList.remove("animation1");
+					icon_chan.classList.remove("show");
+					icon_chan.classList.add("hide");
+					float_.classList.remove("show");
+					float_.classList.add("hide");
+					float_class.classList.remove("hide");
+					float_class.classList.add("show");
+					love.classList.remove("hide");
+					love.classList.add("show");
+					love.classList.add("animation1");
+				});
+				love.addEventListener("click",function(){
+					love.classList.remove("animation1");
+					next_button.classList.add("animation1");
+				});
+			})();
+		</script>
 	</body>
 </html>
