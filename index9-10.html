@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=0.5, minimum-scale=0.5" />
-		<title>9-10步</title>
+		<title>小康大学</title>
 		<link rel="stylesheet" href="css/base.css" />
 		<link rel="stylesheet" href="css/bootstrap.css" />
 		<link rel="stylesheet" href="css/xiaokang.css" />
@@ -23,7 +23,7 @@
 							</div>
 							<div class="col-xs-3 col-xs-offset-2">
 								<a href="index-end.html" target="_self">
-									<img src="img/next-button.png" class="img-responsive" id="next_button">
+									<img src="img/next-button.png" class="img-responsive hide" id="next_button">
 								</a>
 							</div>
 						</div>
@@ -36,10 +36,10 @@
 							<div class="col-xs-12 mobile padding-right mobile-padding">
 								<div class="col-xs-10 col-xs-offset-1 mobile-content">
 									<div class="col-xs-4 col-xs-offset-1 mobile-content-mouse">
-										<img src="img/mouse.png" class="img-responsive animation1" id="mouse" style="display: none;">
+										<img src="img/mouse.png" class="img-responsive" id="mouse" style="display: none;">
 									</div>
 									<div class="col-xs-2 mobile-content-class-tab">
-										<img src="img/mobile-class-tab.png" class="img-responsive hide" id="tab">
+										<img src="img/mobile-class-tab.png" class="img-responsive animation-tab" id="tab">
 									</div>
 									<img src="img/mobile-class-content.png" class="img-responsive mobile-content-class-content hide" id="class_content">
 									<img src="img/mobile-class-bg.png" class="img-responsive mobile-content-bg" id="class_content_bg">
@@ -58,20 +58,21 @@
 		</div>
 		<script type="text/javascript">
 			(function(){
-				var mouse=document.querySelector("#mouse");
+//				var mouse=document.querySelector("#mouse");
 				var tab=document.querySelector("#tab");
 				var class_content=document.querySelector("#class_content");
 				var class_content_bg=document.querySelector("#class_content_bg");
 				var font_left=document.querySelector("#font_left");
 				var next_button=document.querySelector("#next_button");
-				$("#mouse").fadeIn(2000);
-				mouse.addEventListener("click",function(){
-					mouse.classList.remove("animation1");
-					tab.classList.remove("hide");
-					tab.classList.add("animation1");
-				});
+				$("#mouse").fadeIn(1500);
+				$("#mouse").fadeOut(1500);
+//				mouse.addEventListener("click",function(){
+//					mouse.classList.remove("animation1");
+//					tab.classList.remove("hide");
+//					tab.classList.add("animation1");
+//				});
 				tab.addEventListener("click",function(){
-					tab.classList.remove("animation1");
+					tab.classList.remove("animation-tab");
 					tab.classList.add("hide");
 					class_content.classList.remove("hide");
 					class_content_bg.classList.add("hide");
@@ -81,6 +82,7 @@
 				font_left.addEventListener("click",function(){
 					font_left.classList.remove("animation1");
 					next_button.classList.add("animation1");
+					next_button.classList.remove("hide");
 				});
 			})();
 		</script>

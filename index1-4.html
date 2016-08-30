@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=0.5, minimum-scale=0.5" />
-		<title>1-4步</title>
+		<title>小康大学</title>
 		<link rel="stylesheet" href="css/base.css" />
 		<link rel="stylesheet" href="css/bootstrap.css" />
 		<link rel="stylesheet" href="css/xiaokang.css" />
@@ -23,7 +23,7 @@
 							</div>
 							<div class="col-xs-3 col-xs-offset-2">
 								<a href="index5-8.html" target="_self">
-									<img src="img/next-button.png" class="img-responsive" id="next_button">
+									<img src="img/next-button.png" class="img-responsive hide" id="next_button">
 								</a>
 							</div>
 						</div>
@@ -47,14 +47,21 @@
 										<img src="img/user.png" class="img-responsive animation" id="user">
 									</div>
 									<div class="col-xs-2 mobile-content-icon" id="first_icons">
+										<img src="img/icon-lib.png" class="img-responsive moblie-content-icon-img hide">
 										<img src="img/icon-gym.png" class="img-responsive moblie-content-icon-img hide" >
 										<img src="img/icon-station.png" class="img-responsive moblie-content-icon-img hide">
 										<img src="img/icon-class.png" class="img-responsive moblie-content-icon-img hide">
 									</div>
-									<div class="col-xs-2 mobile-content-lock">
-										<img src="img/lock.png" class="img-responsive hide" id="lock">
+									<div class="col-xs-5 mobile-content-lock" id="locks">
+										<img src="img/lock.png" class="img-responsive mobile-content-lock-img1 hide">
+										<img src="img/lock.png" class="img-responsive mobile-content-lock-img2 hide">
+										<img src="img/lock.png" class="img-responsive mobile-content-lock-img3 hide">
+										<img src="img/lock.png" class="img-responsive mobile-content-lock-img4 hide">
 									</div>
-									<img src="img/mobile-main1.png" class="img-responsive mobile-content-bg" id="mobile-main">
+									<img src="img/mobile-main1.png" class="img-responsive mobile-content-bg1 hide" id="mobile-main1">
+									<img src="img/mobile-main2.png" class="img-responsive mobile-content-bg2" id="mobile-main2">
+									<img src="img/mobile-main3.png" class="img-responsive mobile-content-bg3 hide" id="mobile-main3">
+									<img src="img/mobile-main4.png" class="img-responsive mobile-content-bg3 hide" id="mobile-main4">
 									<img src="img/user-center.png" class="img-responsive mobile-contetn-show hide" id="user-center">
 								</div>
 								<img src="img/mobile.png" class="img-responsive mobile-border">
@@ -78,51 +85,68 @@
 				var images=document.querySelectorAll("#first_icons > img");
 				var right_first_top=document.querySelector("#right_first_top");
 				var right_first_down=document.querySelector("#right_first_down");
-				var lock=document.querySelector("#lock");
+				var locks=document.querySelector("#locks");
+				var locks_img=document.querySelectorAll("#locks > img");
 				var next_button=document.querySelector("#next_button");
-				var mobile_main=document.querySelector("#mobile-main");
+				var mobile_main1=document.querySelector("#mobile-main1");
+				var mobile_main2=document.querySelector("#mobile-main2");
+				var mobile_main3=document.querySelector("#mobile-main3");
+				var mobile_main4=document.querySelector("#mobile-main4");
 				var user_center=document.querySelector("#user-center");
 				user.addEventListener("click",function(){
 					user.classList.remove("animation");
 					user.classList.add("hide");
 					left_first.classList.add("animation1");
-					mobile_main.classList.add("hide");
+					mobile_main2.classList.add("hide");
 					user_center.classList.remove("hide");
 					$("#left_first").fadeIn(2000);
 				});
 				left_first.addEventListener("click",function(){
 					left_first.classList.remove("animation1");
-					mobile_main.classList.remove("hide");
+					mobile_main3.classList.remove("hide");
 					user_center.classList.add("hide");
-					for(var i=0;i<images.length;i++){
-						images[i].classList.add("animation-icons");
+					for(var i=1;i<images.length;i++){
+						images[i].classList.add("animation1");
 						images[i].classList.remove("hide");
 					}
+					images[0].classList.remove("hide");
 				});
 				first_icons.addEventListener("click",function(){
-					for(var i=0;i<images.length;i++){
-						images[i].classList.remove("animation-icons");
+					mobile_main3.classList.add("hide");
+					mobile_main2.classList.remove("hide");
+					for(var i=1;i<images.length;i++){
+						images[i].classList.remove("animation1");
 						images[i].classList.add("hide");
 					}
+					images[0].classList.add("hide");
 					right_first_top.classList.add("animation1");
 					$("#right_first_top").fadeIn(2000);
 					right_first_down.style.opacity=1;
 					right_first_down.style.display="none";
 				});
 				right_first_top.addEventListener("click",function(){
+					mobile_main2.classList.add("hide");
+					mobile_main4.classList.remove("hide");
 					right_first_top.classList.remove("animation1");
-					lock.classList.remove("hide");
-					lock.classList.add("animation-lock");
+					for(var i=0;i<locks_img.length;i++){
+						locks_img[i].classList.remove("hide");
+						locks_img[i].classList.add("animation1");
+					}
 				});
-				lock.addEventListener("click",function(){
-					lock.classList.remove("animation-lock");
-					lock.classList.add("hide");
+				locks.addEventListener("click",function(){
+					mobile_main2.classList.remove("hide");
+					mobile_main4.classList.add("hide");
+					for(var i=0;i<locks_img.length;i++){
+						locks_img[i].classList.add("hide");
+						locks_img[i].classList.remove("animation1");
+					}
 					right_first_down.classList.add("animation1");
 					$("#right_first_down").fadeIn(2000);
 				});
 				right_first_down.addEventListener("click",function(){
 					right_first_down.classList.remove("animation1");
 					next_button.classList.add("animation1");
+					next_button.classList.remove("hide");
 				});
 			})();
 		</script>

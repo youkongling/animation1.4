@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=0.5, minimum-scale=0.5" />
-		<title>5-8步</title>
+		<title>小康大学</title>
 		<link rel="stylesheet" href="css/base.css" />
 		<link rel="stylesheet" href="css/bootstrap.css" />
 		<link rel="stylesheet" href="css/xiaokang.css" />
@@ -23,7 +23,7 @@
 							</div>
 							<div class="col-xs-3 col-xs-offset-2">
 								<a href="index9-10.html" target="_self">
-									<img src="img/next-button.png" class="img-responsive" id="next_button">
+									<img src="img/next-button.png" class="img-responsive hide" id="next_button">
 								</a>
 							</div>
 						</div>
@@ -57,7 +57,8 @@
 									</div>
 									<img src="img/mobile-class-bg.png" class="img-responsive mobile-content-class hide" id="float_class">
 									<img src="img/float.png" class="img-responsive moblie-content-float hide" id="float_">
-									<img src="img/mobile-main1.png" class="img-responsive mobile-content-bg show" id="float_bg">
+									<img src="img/mobile-main5.png" class="img-responsive mobile-content-bg" id="float_bg">
+									<img src="img/mobile-main2.png" class="img-responsive mobile-content-bg hide" id="float_bg1">
 								</div>
 								<img src="img/mobile.png" class="img-responsive mobile-border">
 							</div>
@@ -73,6 +74,7 @@
 				var font3=document.querySelector("#font3");
 				var float_=document.querySelector("#float_");
 				var float_bg=document.querySelector("#float_bg");
+				var float_bg1=document.querySelector("#float_bg1");
 				var float_class=document.querySelector("#float_class");
 				var icon_chan=document.querySelector("#icon_chan");
 				var love=document.querySelector("#love");
@@ -80,6 +82,8 @@
 				letter.addEventListener("click",function(){
 					letter.classList.remove("animation1");
 					letter.classList.add("hide");
+					float_bg.classList.add("hide");
+					float_bg1.classList.remove("hide");
 					font1.classList.add("animation1");
 					$("#font1").fadeIn(2000);
 					font3.style.opacity=1;
@@ -95,32 +99,29 @@
 				font3.addEventListener("click",function(){
 					font3.classList.remove("animation1");
 					float_.classList.remove("hide");
-					float_.classList.add("show");
-					float_bg.classList.remove("show");
-					float_bg.classList.add("hide");
+					float_bg1.classList.add("hide");
 					icon_chan.classList.remove("hide");
-					icon_chan.classList.add("show");
 					icon_chan.classList.add("animation1");
 				});
 				icon_chan.addEventListener("click",function(){
 					icon_chan.classList.remove("animation1");
-					icon_chan.classList.remove("show");
 					icon_chan.classList.add("hide");
-					float_.classList.remove("show");
 					float_.classList.add("hide");
 					float_class.classList.remove("hide");
-					float_class.classList.add("show");
+					love.classList.remove("hide");
+					love.classList.add("animation1");
+				});
+				love.addEventListener("click",function(){
+					love.classList.remove("animation1");
+					love.classList.add("hide");
 					font2.classList.add("animation1");
 					$("#font2").fadeIn(2000);
 				});
 				font2.addEventListener("click",function(){
 					font2.classList.remove("animation1");
 					love.classList.remove("hide");
-					love.classList.add("show");
-					love.classList.add("animation1");
-				});
-				love.addEventListener("click",function(){
-					love.classList.remove("animation1");
+					love.classList.remove("hide");
+					next_button.classList.remove("hide");
 					next_button.classList.add("animation1");
 				});
 			})();
