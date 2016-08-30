@@ -23,7 +23,7 @@
 							</div>
 							<div class="col-xs-3 col-xs-offset-2">
 								<a href="index-end.html" target="_self">
-									<img src="img/next-button.png" class="img-responsive hide" id="next_button">
+									<img src="img/next-button.png" class="img-responsive" id="next_button" style="opacity: 0;">
 								</a>
 							</div>
 						</div>
@@ -82,7 +82,7 @@
 				font_left.addEventListener("click",function(){
 					font_left.classList.remove("animation1");
 					next_button.classList.add("animation1");
-					next_button.classList.remove("hide");
+					next_button.style.opacity=1;
 				});
 			})();
 		</script>

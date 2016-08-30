@@ -41,6 +41,7 @@ body{
 	opacity: 1;
 	margin: 0 auto;
 	animation: arrow-tint 1s infinite;
+	-webkit-animation: arrow-tint 1s infinite;
 }
 
 .tinttext{
@@ -51,14 +52,26 @@ body{
 }
 
 @keyframes arrow-tint{
-0%{
-	top: 0;
-	width: 30%;
-	opacity: 1;
+	0%{
+		top: 0;
+		width: 30%;
+		opacity: 1;
+	}
+	100%{
+		top: -50%;
+		width: 20%;
+		opacity: 0.3;
+	}
 }
-100%{
-	top: -50%;
-	width: 20%;
-	opacity: 0.3;
-}
+@-webkit-keyframes arrow-tint{
+	0%{
+		top: 0;
+		width: 30%;
+		opacity: 1;
+	}
+	100%{
+		top: -50%;
+		width: 20%;
+		opacity: 0.3;
+	}
 }

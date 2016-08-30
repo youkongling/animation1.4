@@ -23,7 +23,7 @@
 							</div>
 							<div class="col-xs-3 col-xs-offset-2">
 								<a href="index9-10.html" target="_self">
-									<img src="img/next-button.png" class="img-responsive hide" id="next_button">
+									<img src="img/next-button.png" class="img-responsive" id="next_button" style="opacity: 0;">
 								</a>
 							</div>
 						</div>
@@ -41,7 +41,8 @@
 									<img src="img/5-8wenzi2.png" class="img-responsive mobile-right-img2" id="font2" style="opacity: 0;">
 								</div>
 								<div class="col-xs-5">
-									<img src="img/5-8wenzi3.png" class="img-responsive mobile-right-img3" id="font3" style="opacity: 0;">
+									<img src="img/5-8wenzi3.png" class="img-responsive mobile-right-img3" id="font3" style="display: none;">
+									<img src="img/5-8wenzi3.png" class="img-responsive mobile-right-img3" id="font31" style="opacity: 0;">
 								</div>
 							</div>
 							<div class="col-xs-12 mobile padding-right">
@@ -72,6 +73,7 @@
 				var letter=document.querySelector("#letter");
 				var font1=document.querySelector("#font1");
 				var font3=document.querySelector("#font3");
+				var font31=document.querySelector("#font31");
 				var float_=document.querySelector("#float_");
 				var float_bg=document.querySelector("#float_bg");
 				var float_bg1=document.querySelector("#float_bg1");
@@ -87,11 +89,11 @@
 					font1.classList.add("animation1");
 					$("#font1").fadeIn(2000);
 					font3.style.opacity=1;
-					font3.style.display="none";
 				});
 				font1.addEventListener("click",function(){
 					font1.classList.remove("animation1");
 					font3.classList.add("animation1");
+					font31.style.display="none";
 					$("#font3").fadeIn(2000);
 					font2.style.opacity=1;
 					font2.style.display="none";
@@ -119,10 +121,8 @@
 				});
 				font2.addEventListener("click",function(){
 					font2.classList.remove("animation1");
-					love.classList.remove("hide");
-					love.classList.remove("hide");
-					next_button.classList.remove("hide");
 					next_button.classList.add("animation1");
+					next_button.style.opacity=1;
 				});
 			})();
 		</script>
